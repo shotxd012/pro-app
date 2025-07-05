@@ -3,16 +3,16 @@ package com.tokyomc.shot
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.tokyomc.shot.ui.BankBalanceScreen
-import com.tokyomc.shot.ui.SettingsScreen
+import com.tokyomc.shot.ui.*
 import com.tokyomc.shot.ui.theme.ShotAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    AppNavigation()
+                    FinanceApp()
                 }
             }
         }
@@ -32,14 +32,37 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun AppNavigation() {
+fun FinanceApp() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "bankBalance") {
-        composable("bankBalance") {
-            BankBalanceScreen(navController = navController)
+    
+    Scaffold(
+        bottomBar = {
+            FinanceBottomNavigation(navController = navController)
         }
-        composable("settings") {
-            SettingsScreen(navController = navController)
+    ) { paddingValues ->
+        NavHost(
+            navController = navController,
+            startDestination = "dashboard",
+            modifier = Modifier.padding(paddingValues)
+        ) {
+            composable("dashboard") {
+                DashboardScreen(navController = navController)
+            }
+            composable("transactions") {
+                TransactionsScreen(navController = navController)
+            }
+            composable("analytics") {
+                AnalyticsScreen(navController = navController)
+            }
+            composable("accounts") {
+                AccountsScreen(navController = navController)
+            }
+            composable("settings") {
+                SettingsScreen(navController = navController)
+            }
+            composable("bankBalance") {
+                BankBalanceScreen(navController = navController)
+            }
         }
     }
 }
