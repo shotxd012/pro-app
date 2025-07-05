@@ -6,6 +6,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.Dashboard
+import androidx.compose.material.icons.outlined.Receipt
+import androidx.compose.material.icons.outlined.Analytics
+import androidx.compose.material.icons.outlined.AccountBalance
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -55,32 +60,32 @@ fun FinanceBottomNavigation(navController: NavController) {
             BottomNavItem(
                 route = "dashboard",
                 title = "Dashboard",
-                icon = Icons.Default.Dashboard,
-                selectedIcon = Icons.Default.Dashboard
+                icon = Icons.Outlined.Dashboard,
+                selectedIcon = Icons.Outlined.Dashboard
             ),
             BottomNavItem(
                 route = "transactions",
                 title = "Transactions",
-                icon = Icons.Default.Receipt,
-                selectedIcon = Icons.Default.Receipt
+                icon = Icons.Outlined.Receipt,
+                selectedIcon = Icons.Outlined.Receipt
             ),
             BottomNavItem(
                 route = "analytics",
                 title = "Analytics",
-                icon = Icons.Default.Analytics,
-                selectedIcon = Icons.Default.Analytics
+                icon = Icons.Outlined.Analytics,
+                selectedIcon = Icons.Outlined.Analytics
             ),
             BottomNavItem(
                 route = "accounts",
                 title = "Accounts",
-                icon = Icons.Default.AccountBalance,
-                selectedIcon = Icons.Default.AccountBalance
+                icon = Icons.Outlined.AccountBalance,
+                selectedIcon = Icons.Outlined.AccountBalance
             ),
             BottomNavItem(
                 route = "settings",
                 title = "Settings",
-                icon = Icons.Default.Settings,
-                selectedIcon = Icons.Default.Settings
+                icon = Icons.Outlined.Settings,
+                selectedIcon = Icons.Outlined.Settings
             )
         )
 

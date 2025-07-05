@@ -4,10 +4,17 @@ import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.TrendingUp
+import androidx.compose.material.icons.outlined.TrendingDown
+import androidx.compose.material.icons.outlined.AccountBalance
+import androidx.compose.material.icons.outlined.Savings
+import androidx.compose.material.icons.outlined.Warning
+import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -108,7 +115,7 @@ fun AnalyticsHeader(navController: NavController) {
                 )
         ) {
             Icon(
-                imageVector = Icons.Default.Share,
+                imageVector = Icons.Outlined.Share,
                 contentDescription = "Share",
                 tint = FinanceGreen,
                 modifier = Modifier.size(24.dp)
@@ -160,13 +167,13 @@ fun OverviewCard() {
                     label = "Total Income",
                     amount = totalIncome,
                     color = FinanceGreen,
-                    icon = Icons.Default.TrendingUp
+                    icon = Icons.Outlined.TrendingUp
                 )
                 OverviewItem(
                     label = "Total Expense",
                     amount = totalExpense,
                     color = FinanceRed,
-                    icon = Icons.Default.TrendingDown
+                    icon = Icons.Outlined.TrendingDown
                 )
             }
             
@@ -184,13 +191,13 @@ fun OverviewCard() {
                     label = "Net Amount",
                     amount = netAmount,
                     color = if (netAmount >= 0) FinanceGreen else FinanceRed,
-                    icon = Icons.Default.AccountBalance
+                    icon = Icons.Outlined.AccountBalance
                 )
                 OverviewItem(
                     label = "Savings Rate",
                     amount = savingsRate,
                     color = FinanceGreen,
-                    icon = Icons.Default.Savings,
+                    icon = Icons.Outlined.Savings,
                     isPercentage = true
                 )
             }
@@ -438,7 +445,7 @@ fun InsightsCard() {
             Spacer(modifier = Modifier.height(16.dp))
             
             InsightItem(
-                icon = Icons.Default.TrendingUp,
+                icon = Icons.Outlined.TrendingUp,
                 title = "Strong Income Growth",
                 description = "Your income has increased by 15% this month",
                 color = FinanceGreen
@@ -447,7 +454,7 @@ fun InsightsCard() {
             Spacer(modifier = Modifier.height(12.dp))
             
             InsightItem(
-                icon = Icons.Default.Warning,
+                icon = Icons.Outlined.Warning,
                 title = "High Food Spending",
                 description = "Food expenses are 20% above your budget",
                 color = FinanceOrange
@@ -456,7 +463,7 @@ fun InsightsCard() {
             Spacer(modifier = Modifier.height(12.dp))
             
             InsightItem(
-                icon = Icons.Default.Savings,
+                icon = Icons.Outlined.Savings,
                 title = "Good Savings Rate",
                 description = "You're saving 35% of your income",
                 color = FinanceGreen

@@ -9,6 +9,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.AccountBalance
+import androidx.compose.material.icons.outlined.PieChart
+import androidx.compose.material.icons.outlined.Savings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -232,7 +235,7 @@ fun QuickActionsRow(navController: NavController) {
         }
         item {
             QuickActionButton(
-                icon = Icons.Default.AccountBalance,
+                icon = Icons.Outlined.AccountBalance,
                 label = "Accounts",
                 onClick = { /* Navigate to accounts */ },
                 color = FinanceBlue
@@ -240,7 +243,7 @@ fun QuickActionsRow(navController: NavController) {
         }
         item {
             QuickActionButton(
-                icon = Icons.Default.PieChart,
+                icon = Icons.Outlined.PieChart,
                 label = "Analytics",
                 onClick = { /* Navigate to analytics */ },
                 color = FinancePurple
@@ -248,7 +251,7 @@ fun QuickActionsRow(navController: NavController) {
         }
         item {
             QuickActionButton(
-                icon = Icons.Default.Savings,
+                icon = Icons.Outlined.Savings,
                 label = "Goals",
                 onClick = { /* Navigate to goals */ },
                 color = FinanceOrange
