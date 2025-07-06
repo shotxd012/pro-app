@@ -43,7 +43,9 @@ fun FinanceApp() {
         NavHost(
             navController = navController,
             startDestination = "dashboard",
-            modifier = Modifier.padding(paddingValues)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
         ) {
             composable("dashboard") {
                 DashboardScreen(navController = navController)
