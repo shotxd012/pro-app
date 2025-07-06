@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.room.runtime)
     implementation(libs.androidx.core.ktx)
+    implementation("androidx.compose.material:material-icons-extended")
     annotationProcessor(libs.room.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
